@@ -14,7 +14,7 @@ $font-sm: 20px;
 }
 
 .banner h1 {
-  $color-secondary: red;
+  $color-secondary: red !global;
   font-size: $font-lg;
   color: $color-secondary;
   text-align: center;
