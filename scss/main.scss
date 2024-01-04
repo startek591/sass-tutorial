@@ -1,7 +1,7 @@
 // Create variables
 // Global scope
 $color-primary: orange;
-$color-secondary: green;
+$color-secondary: gray;
 $color-tertiary: royalblue;
 
 $font-lg: 40px;
@@ -28,15 +28,27 @@ $font-sm: 20px;
     }
   }
 }
-
-.banner h1 {
-  font-size: $font-lg;
+// mixin is a block of code, which groups bunch of resusable CSS styles
+@mixin headingStyles($fontSize: 50px) {
+  font-size: $fontSize;
   color: $color-secondary;
   text-align: center;
 }
 
+// taking multiple properties into a parameter
+@mixin transition($param...) {
+  transition: $param;
+}
+
+.banner h1 {
+  @include headingStyles($font-lg);
+}
+
 .footer h3 {
-  font-size: $font-md;
-  color: $color-secondary;
-  text-align: center;
+  @include headingStyles;
+  @include transition(color 0.5s, background-color 1s);
+  &:hover {
+    color: $color-tertiary;
+    background-color: $color-primary;
+  }
 }
