@@ -9,7 +9,7 @@
     .nav a:hover {
       color: royalblue; }
 
-.heading, h1, .footer h3 {
+h1, .footer h3 {
   color: orange;
   font-size: 40px;
   background-color: gray;
