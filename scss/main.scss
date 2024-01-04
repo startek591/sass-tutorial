@@ -1,3 +1,27 @@
-body {
-  background-color: blue;
+// Create variables
+// Global scope
+$color-primary: orange;
+$color-secondary: green;
+$color-tertiary: royalblue;
+
+$font-lg: 40px;
+$font-md: 30px;
+$font-sm: 20px;
+
+.nav {
+  // Local scope
+  background-color: $color-primary;
+}
+
+.banner h1 {
+  $color-secondary: red;
+  font-size: $font-lg;
+  color: $color-secondary;
+  text-align: center;
+}
+
+.footer h3 {
+  font-size: $font-md;
+  color: $color-secondary;
+  text-align: center;
 }
