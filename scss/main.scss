@@ -10,7 +10,9 @@ $font-sm: 20px;
 
 .nav {
   // Local scope
-  background-color: $color-primary;
+  // One commonly used function
+  // Source of others: sass.lang.com/documentation/Sass/Script/Functions.html
+  background-color: mix(blue, green, 10%);
 
   // Nesting in SASS
   ul li {
@@ -47,6 +49,11 @@ $font-sm: 20px;
   text-align: center;
 }
 
+// function allows us to run code over and over again when we call it.
+@function fontSize($size: 25px) {
+  @return $size * 2;
+}
+
 h1 {
   // @include headingStyles($font-lg);
 
@@ -68,4 +75,13 @@ h1 {
   // }
 
   @extend h1;
+}
+
+// using function
+.banner p {
+  font-size: fontSize($font-sm);
+}
+
+.footer p {
+  font-size: fontSize();
 }
