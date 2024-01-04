@@ -1,0 +1,20 @@
+{
+  "name": "sass-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "node-sass -o css scss/main.scss -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/startek591/sass-tutorial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/startek591/sass-tutorial/issues"
+  },
+  "homepage": "https://github.com/startek591/sass-tutorial#readme"
+}
