@@ -29,26 +29,43 @@ $font-sm: 20px;
   }
 }
 // mixin is a block of code, which groups bunch of resusable CSS styles
-@mixin headingStyles($fontSize: 50px) {
-  font-size: $fontSize;
-  color: $color-secondary;
+// @mixin headingStyles($fontSize: 50px) {
+//   font-size: $fontSize;
+//   color: $color-secondary;
+//   text-align: center;
+// }
+
+// taking multiple properties into a parameter
+// @mixin transition($param...) {
+//   transition: $param;
+// }
+
+.heading {
+  color: $color-primary;
+  font-size: $font-lg;
+  background-color: $color-secondary;
   text-align: center;
 }
 
-// taking multiple properties into a parameter
-@mixin transition($param...) {
-  transition: $param;
-}
+h1 {
+  // @include headingStyles($font-lg);
 
-.banner h1 {
-  @include headingStyles($font-lg);
+  // Extend allow one selector to inherit styles of another selector
+  // a combination of selector doesn't work with extend
+  @extend .heading;
+
+  &:hover {
+    background-color: green;
+  }
 }
 
 .footer h3 {
-  @include headingStyles;
-  @include transition(color 0.5s, background-color 1s);
-  &:hover {
-    color: $color-tertiary;
-    background-color: $color-primary;
-  }
+  // @include headingStyles;
+  // @include transition(color 0.5s, background-color 1s);
+  // &:hover {
+  //   color: $color-tertiary;
+  //   background-color: $color-primary;
+  // }
+
+  @extend h1;
 }
